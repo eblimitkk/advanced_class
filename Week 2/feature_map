@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Intro to FeatureLayer - 4.8</title>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.8/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.8/"></script>
+
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+
+  <script>
+    require([
+        "esri/Map",
+        "esri/views/MapView",
+
+        "esri/layers/FeatureLayer",
+
+        "dojo/domReady!"
+      ],
+      function(
+        Map, MapView,
+        FeatureLayer
+      ) {
+
+        var map = new Map({
+          basemap: "gray"
+        });
+
+        var view = new MapView({
+          container: "viewDiv",
+          map: map,
+
+          zoom: 6,
+          center:[-97.74299,30.26759]
+          
+        });
+
+        /********************
+         * Add feature layer
+         ********************/
+
+        // Carbon storage of trees in Warren Wilson College.
+        var featureLayer = new FeatureLayer({
+          url: "http://services.arcgis.com/8BKVd7DzccTE7TwW/arcgis/rest/services/Percent_GTE_65_Major_Cities/FeatureServer/0"
+        });
+        
+        var featureLayer_2 = new FeatureLayer({
+          url: "https://services3.arcgis.com/LNTe09Xft4ymdHYS/arcgis/rest/services/texas_rail/FeatureServer/0"
+        });
+        
+        map.add(featureLayer);
+        map.add(featureLayer_2);
+
+      });
+  </script>
+</head>
+
+<body>
+  <div id="viewDiv"></div>
+</body>
+
+</html>
