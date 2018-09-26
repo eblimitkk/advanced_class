@@ -1,0 +1,1 @@
+When changing scene to local, my map stops working. Creating a local scene in ArcGIS online gives me an error message, saying that "Geographic coordinate systems are not supported for a Scene Layer in local scenes."
