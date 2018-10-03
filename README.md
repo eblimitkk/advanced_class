@@ -1,4 +1,4 @@
 # advanced_class
 
 ## Portland Map Link
-https://eblimitkk.github.io/advanced_class/
+https://github.com/eblimitkk/advanced_class/blob/master/Project%201/Portland_Landmarks.html
